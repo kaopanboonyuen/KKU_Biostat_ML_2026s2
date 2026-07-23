@@ -188,7 +188,7 @@ If you use this repository, course materials, or code in your research, teaching
   title        = {Fundamental Machine Learning using Python for Public Health},
   year         = {2026},
   publisher    = {GitHub},
-  howpublished = {\url{https://github.com/<your-github>/KKU_Biostat_ML_2026s2}},
+  howpublished = {https://github.com/KKU_Biostat_ML_2026s2/KKU_Biostat_ML_2026s2},
   note         = {Lecture for the Master of Public Health (Biostatistics) Program, Department of Biostatistics, Faculty of Public Health, Khon Kaen University}
 }
 ```
