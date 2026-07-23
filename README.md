@@ -128,32 +128,6 @@ Research & Publication
 
 ---
 
-# 📁 Repository Structure
-
-```text
-KKU_Biostat_ML_2026s2
-│
-├── datasets/
-├── notebooks/
-│   ├── 01_python_basics.ipynb
-│   ├── 02_data_preprocessing.ipynb
-│   ├── 03_exploratory_data_analysis.ipynb
-│   ├── 04_machine_learning.ipynb
-│   ├── 05_model_evaluation.ipynb
-│   ├── 06_stroke_prediction.ipynb
-│   ├── 07_explainable_ai.ipynb
-│   └── 08_reproducible_research.ipynb
-│
-├── slides/
-├── figures/
-├── assets/
-│
-├── requirements.txt
-└── README.md
-```
-
----
-
 # 🛠 Software Stack
 
 | Category | Libraries |
