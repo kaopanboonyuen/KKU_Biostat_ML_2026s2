@@ -1,4 +1,5 @@
-# 🧠 KKU_Biostat_ML_2026s2
+# 🧠 Machine Learning for Public Health
+### A Two-Day Hands-on Workshop
 
 > **Machine Learning for Public Health**  
 > Department of Biostatistics  
