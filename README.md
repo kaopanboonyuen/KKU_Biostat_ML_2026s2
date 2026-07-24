@@ -1,15 +1,16 @@
-# 🧠 Machine Learning for Public Health
+# 🧠 Fundamental Machine Learning using Python for Public Health
 ### A Two-Day Hands-on Workshop
 
-> **Machine Learning for Public Health**  
-> Department of Biostatistics  
-> Faculty of Public Health, Khon Kaen University  
+> **Machine Learning for Public Health**
+> Department of Biostatistics
+> Faculty of Public Health, Khon Kaen University
 > Semester 2, Academic Year 2026
 
 <p align="center">
 
 ![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
 ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
 ![MIT](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)
 
@@ -19,143 +20,117 @@
 
 ## 📖 Overview
 
-This repository contains the official teaching materials for the two-day workshop
+This repository contains the official teaching materials for the two-day workshop **Fundamental Machine Learning using Python for Public Health**, designed for graduate students in the **Master of Public Health (Biostatistics)** program, Faculty of Public Health, Khon Kaen University.
 
-# **Fundamental Machine Learning using Python for Public Health**
-
-designed for graduate students in the **Master of Public Health (Biostatistics)** program, Faculty of Public Health, Khon Kaen University.
-
-The workshop introduces the complete machine learning workflow for healthcare applications, from data preparation and exploratory analysis to predictive modeling, explainable AI, and reproducible scientific research. Throughout the course, participants will work with a real-world healthcare dataset and implement modern machine learning techniques using Python.
-
----
+Participants work hands-on with a real clinical stroke-prediction dataset, moving from Python fundamentals all the way to PyTorch neural networks — the complete modern ML workflow for healthcare applications.
 
 ## 👨‍🏫 Lecturer
 
-**Dr. Teerapong Panboonyuen (Kao)**
-
-AI Researcher • Computer Vision • Medical AI • Machine Learning
-
----
+**Dr. Teerapong Panboonyuen (Kao)** — AI Researcher • Computer Vision • Medical AI • Machine Learning
+[kaopanboonyuen.github.io](https://kaopanboonyuen.github.io/)
 
 ## 🎯 Learning Outcomes
 
-After completing this workshop, participants will be able to
-
-- prepare healthcare datasets for machine learning
-- perform exploratory data analysis (EDA)
-- develop supervised learning models
-- evaluate classification performance
-- address missing values and class imbalance
-- interpret machine learning models using Explainable AI
-- reproduce published machine learning research
-- build reproducible data science workflows
+- Prepare and explore real-world healthcare datasets with `pandas`
+- Engineer clinically meaningful features from raw patient data
+- Build and evaluate supervised ML models: Decision Trees, Random Forests, Logistic Regression
+- Handle missing values and imbalanced clinical outcomes correctly
+- Understand neural networks from first principles, and build them in **PyTorch**
+- Compare classical ML vs. Deep Learning fairly, using the right metrics
+- Apply reproducible, ethical AI research practices in public health
 
 ---
 
-# 📅 Course Schedule
+## 🗓️ Workshop Schedule
 
-## Day 1 — Foundations of Machine Learning
+### 📅 Day 1 — Python Foundations, Feature Engineering & Your First ML Models
 
-| Time | Topic |
-|------|------|
-| 13:00–13:30 | Python Refresher for Data Science |
-| 13:30–14:00 | Preparing Real-World Health Datasets |
-| 14:00–14:30 | Exploratory Data Analysis |
-| 14:30–15:00 | Introduction to Machine Learning |
-| 15:00–15:30 | Supervised Learning: Classification |
-| 15:30–16:00 | Building Your First Machine Learning Model |
+> 🎯 **Goal**: Refresh core Python for data science, explore a real stroke-risk dataset, engineer clinically meaningful features, and train + evaluate your first classifiers.
 
----
+#### 🛠️ Lab Activity: KKU Stroke Dataset
 
-## Day 2 — From Data to Research
+| Resource | Link |
+|:---|:---|
+| 🧠 Lecture Slide | [Day1_KKU_Biostat_ML.pdf](https://github.com/kaopanboonyuen/KKU_Biostat_ML_2026s2/blob/main/slides/Day1_KKU_Biostat_ML.pdf) |
+| 🧪 Colab Notebook | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kaopanboonyuen/KKU_Biostat_ML_2026s2/blob/main/code/Day1_KKU_Biostat_ML.ipynb) |
+| 📂 Dataset | [kku-stroke-dataset.csv](https://github.com/kaopanboonyuen/KKU_Biostat_ML_2026s2/blob/main/dataset/kku-stroke-dataset.csv) |
 
-| Time | Topic |
-|------|------|
-| 13:00–13:20 | Review of the Machine Learning Pipeline |
-| 13:20–13:50 | Feature Engineering |
-| 13:50–14:20 | Model Evaluation |
-| 14:20–14:50 | Stroke Prediction Case Study |
-| 14:50–15:20 | Handling Imbalanced Healthcare Data |
-| 15:20–15:40 | Explainable AI |
-| 15:40–16:00 | Reproducible Machine Learning Research |
+> 💡 **Lab Topics**
+>
+> - Python refresher: variables, operators, conditionals, loops, containers, functions, classes
+> - Loading and exploring the dataset with `pandas`: missingness, class imbalance, rich EDA
+> - Feature engineering: clinical binning (WHO BMI / ADA glucose), encoding, composite risk scores
+> - Building a supervised learning pipeline: stratified split → Decision Tree → Random Forest
+> - Feature importance, and full evaluation: Accuracy, Precision, Recall, F1, ROC-AUC, confusion matrix
 
----
+<details>
+<summary>📖 Dataset Dictionary — KKU Stroke Dataset</summary>
 
-# 🏥 Hands-on Dataset
+| Column | Description |
+|:---|:---|
+| `id` | Unique participant identifier |
+| `gender` | Male / Female / Other |
+| `age` | Age in years |
+| `hypertension` | History of hypertension (0 = No, 1 = Yes) |
+| `heart_disease` | History of heart disease (0 = No, 1 = Yes) |
+| `ever_married` | Marital status (Yes/No) |
+| `work_type` | Private, Self-employed, Govt_job, children, Never_worked |
+| `Residence_type` | Urban / Rural |
+| `avg_glucose_level` | Average blood glucose level (mg/dL) |
+| `bmi` | Body Mass Index (kg/m²) — contains missing values |
+| `smoking_status` | never smoked / formerly smoked / smokes / Unknown |
+| `stroke` | **Target** — Stroke diagnosis (0 = No, 1 = Yes) |
 
-This course uses the **Stroke Prediction Dataset**, a real-world healthcare dataset containing demographic information, clinical history, physiological measurements, and lifestyle factors for predicting stroke risk.
-
-### Prediction Task
-
-- Binary Classification
-- Target Variable: `stroke`
-
-### Machine Learning Challenges
-
-- Missing values
-- Imbalanced classes
-- Mixed numerical and categorical variables
-- Clinical model interpretability
+</details>
 
 ---
 
-# 🔬 Machine Learning Workflow
+### 📅 Day 2 — Logistic Regression, Neural Networks & Deep Learning
 
-```text
-Healthcare Data
-      │
-      ▼
-Data Preparation
-      │
-      ▼
-Exploratory Data Analysis
-      │
-      ▼
-Feature Engineering
-      │
-      ▼
-Model Development
-      │
-      ▼
-Performance Evaluation
-      │
-      ▼
-Explainable AI
-      │
-      ▼
-Research & Publication
-```
+> 🎯 **Goal**: Understand Logistic Regression and neural networks from first principles, build real PyTorch models (including a 1D CNN), and close with a guide to responsible AI research in public health.
+
+#### 🛠️ Lab Activity: Stroke Risk Modeling — Classical ML vs. Deep Learning
+
+| Resource | Link |
+|:---|:---|
+| 🧠 Lecture Slide | [Day2_KKU_Biostat_ML.pdf](https://github.com/kaopanboonyuen/KKU_Biostat_ML_2026s2/blob/main/slides/Day2_KKU_Biostat_ML.pdf) |
+| 🧪 Colab Notebook | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kaopanboonyuen/KKU_Biostat_ML_2026s2/blob/main/code/Day2_KKU_Biostat_ML.ipynb) |
+| 📂 Dataset | [kku-stroke-dataset.csv](https://github.com/kaopanboonyuen/KKU_Biostat_ML_2026s2/blob/main/dataset/kku-stroke-dataset.csv) |
+
+> 💡 **Lab Topics**
+>
+> - Logistic Regression from first principles: sigmoid, logit, binary cross-entropy, gradient descent
+> - The bridge from a single neuron to full neural networks
+> - Hands-on **PyTorch**: a Simple MLP, a Deeper MLP (Dropout + BatchNorm), and a 1D CNN for automatic feature learning
+> - Reading a paper's Methods section: epochs, learning rate, batch size, optimizer, regularization
+> - Fair model comparison — Decision Tree / Random Forest / Logistic Regression / Neural Nets — same data, same metrics
+> - Reproducible research practices and responsible/ethical AI use in public health
 
 ---
 
-# 🛠 Software Stack
+## 🏥 Hands-on Dataset
+
+The **KKU Stroke Dataset** is a real-world healthcare dataset (credit: [Kaggle](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset)) with demographic, clinical, and lifestyle features for predicting stroke risk.
+
+- **Task:** Binary classification — Target variable: `stroke`
+- **Challenges:** Missing values, class imbalance, mixed numerical/categorical variables, clinical interpretability
+
+## 🛠 Software Stack
 
 | Category | Libraries |
-|----------|-----------|
+|---|---|
 | Programming | Python 3.11 |
 | Data Analysis | NumPy, Pandas |
 | Visualization | Matplotlib, Seaborn |
-| Machine Learning | Scikit-learn |
-| Imbalanced Learning | imbalanced-learn |
-| Gradient Boosting | XGBoost |
-| Explainable AI | SHAP, LIME |
-| Environment | Jupyter Notebook |
+| Classical ML | Scikit-learn |
+| Deep Learning | PyTorch |
+| Environment | Jupyter Notebook / Google Colab |
 
----
+## 📚 Reference
 
-# 📚 Reference
-
-Melnykova, N., et al. (2025).
-
-**Machine learning for stroke prediction using imbalanced data.**
-
-*Scientific Reports*, **15**(1), 33773.
-
----
+Melnykova, N., et al. (2025). **Machine learning for stroke prediction using imbalanced data.** *Scientific Reports*, 15(1), 33773.
 
 ## 📖 Citation
-
-If you use this repository, course materials, or code in your research, teaching, or publications, please cite
 
 ```bibtex
 @misc{Panboonyuen2026ML4PH,
@@ -163,26 +138,18 @@ If you use this repository, course materials, or code in your research, teaching
   title        = {Fundamental Machine Learning using Python for Public Health},
   year         = {2026},
   publisher    = {GitHub},
-  howpublished = {https://github.com/KKU_Biostat_ML_2026s2/KKU_Biostat_ML_2026s2},
+  howpublished = {https://github.com/kaopanboonyuen/KKU_Biostat_ML_2026s2},
   note         = {Lecture for the Master of Public Health (Biostatistics) Program, Department of Biostatistics, Faculty of Public Health, Khon Kaen University}
 }
 ```
 
----
-
 ## 🤝 Acknowledgements
 
-This workshop is organized for the Master of Public Health (Biostatistics) program, Faculty of Public Health, Khon Kaen University.
-
-Special thanks to all students and participants for their enthusiasm and engagement throughout the workshop.
-
----
+Organized for the Master of Public Health (Biostatistics) program, Faculty of Public Health, Khon Kaen University. Dataset credit: Kaggle. Built with scikit-learn and PyTorch. Thanks to all students for their enthusiasm throughout the workshop.
 
 ## 📜 License
 
-This repository is released under the **MIT License**.
-
-The materials are intended primarily for educational and research purposes. Please provide appropriate attribution when reusing substantial portions of this repository.
+Released under the **MIT License**. Intended primarily for educational and research purposes — please provide attribution when reusing substantial portions of this repository.
 
 ---
 
